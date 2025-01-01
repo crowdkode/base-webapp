@@ -1,1 +1,119 @@
+/*------------------------------------------------------------------------
+# BASE Web App - Dec 15, 2024 / Last Updated: 12/15/2024
+# ------------------------------------------------------------------------
+# Designed by SAVAGENERD/K-Rock for BASE
+# Websites:  https://basepages.com -  Email: contact@basepages.com
+--------------------------------------------------------------------------
 
+1.	Main Styles
+2.	Common CSS (Links, buttons, margin class, text align class, etc)
+3.	Container
+
+--------------------------------------------------------------------------------*/
+/* 1.	Main
+--------------------------------------------------------------------------------*/
+html{
+	font-size: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+body{
+	background: #000;
+	margin: 0;
+	font-family: Helvetica, Verdana, sans-serif;
+	font-weight: 400;
+	font-size: 1.2em;
+	line-height: 1.6em;
+	color: #fff;
+	max-width:100%;
+}
+/*------------------------------------------------------------------------------
+  2. Common CSS
+--------------------------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: Helvetica, Verdana, sans-serif;
+	font-weight: 300;
+	color:#fff;
+}
+h1 {
+	font-size: 48px;
+	line-height: 58px;
+}
+a, a:link, a:visited, a:hover, a:active {
+	color: #008dea; /* also change Line 1303 for Titles 0077CC */
+	text-decoration: none;
+	transition: color 0.3s;
+	-o-transition: color 0.3s;
+	-ms-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	-webkit-transition: color 0.3s;	
+}
+a:hover{
+	text-decoration: none;
+	color: #00A1FE;
+}
+img{
+	/* Responsive images (ensure images don't scale beyond their parents) */
+	max-width: 100%;
+	height: auto;
+	/* Part 2: Scale the height according to the width, otherwise you get stretching */
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+button, input, select, textarea{
+	margin: 0;
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: 100%;
+	outline: none;
+}
+button, input{
+	*
+	overflow: visible;
+	line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner{
+	padding: 0;
+	border: 0;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"]{
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+label, select, button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"]{
+	cursor: pointer;
+}
+input[type="search"]{
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button{
+	-webkit-appearance: none;
+}
+textarea{
+	overflow: auto;
+	vertical-align: top;
+	resize: none;
+}
+/*------------------------------------------------------------------------------
+3. Containers
+--------------------------------------------------------------------------------*/
+.container {
+	/*overflow:hidden;*/
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1160px;
+	padding:15px 25px 30px;
+	box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; 
+}
