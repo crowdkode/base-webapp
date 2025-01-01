@@ -1,0 +1,12 @@
+{
+  "name": "WΞBΛPP",
+  "short_name": "WΞBΛPP",
+  "lang": "en-US",
+  "start_url": "https://webapp.basepages.com",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "app_icon.png"
+    }
+  ]
+}

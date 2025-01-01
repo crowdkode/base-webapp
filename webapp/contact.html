@@ -1,0 +1,442 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=5.0, viewport-fit=cover" />
+	<meta name="apple-touch-fullscreen" content="yes">
+	
+	<title>BASE - Hybrid Web App</title>
+	<meta name="description" content="The most powerful web app in the world">
+	<meta name="keywords" content="web app,hybrid,html5,pwa,progressive,base" />
+	<meta name="author" content="BASE Frameworks">
+
+	<meta property="og:title" content="BASE - Hybrid Web App">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://webapp.basepages.com">
+	<meta property="og:description" content="The most powerful hybrid Web App in the world - created by BASE Frameworks">
+	<meta property="og:image" content="/favicon.png">
+
+	<link rel="icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+	<!--<link rel="apple-touch-icon" sizes="72x72" href="" />
+	<link rel="apple-touch-icon" sizes="76x76" href="" />
+	<link rel="apple-touch-icon" sizes="114x114" href="" />
+	<link rel="apple-touch-icon" sizes="120x120" href="" />
+	<link rel="apple-touch-icon" sizes="144x144" href="" />
+	<link rel="apple-touch-icon" sizes="152x152" href="" />-->
+
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="/icon@57.png" sizes="57x57" />
+
+	<script rel="preload" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+   type="text/javascript"> </script>
+
+	<!-- WEB APP META -->
+	<link rel="manifest" href="/manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<script src="/js/webapp/stay_standalone.js" type="text/javascript"> </script>
+	<meta name="application-name" content="Web App">
+	<meta name="apple-mobile-web-app-title" content="Web App">
+	<meta name="msapplication-starturl" content="https://webapp.basepages.com">
+	<link rel="stylesheet" href="/js/webapp/style/addtohomescreen.css" type="text/css">
+	<script src="/js/webapp/src/addtohomescreen.js?v=1.0"> </script>
+	
+	<meta name="theme-color" content="#111518" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- WEB APP META ENDS -->
+
+	<script type="application/javascript">
+		addToHomescreen();
+	</script>
+
+	<link rel="stylesheet" href="/css/styles.css?v=1.0">
+	<link rel="stylesheet" href="/css/responsive.css?v=1.0">
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			////////////////////////////////////////////////////////////
+			// THE BELOW HELPS OVER-RIDE ANY EXISTING STYLES TO PERFECT
+			// YOUR WEB APP'S LAYOUT, APPEARANCE & SPACING
+			////////////////////////////////////////////////////////////
+
+			//jQuery.noConflict();
+			//alert('Doc Ready detection works');
+			// App Mode Detection
+			var standalone = window.navigator.standalone,
+			userAgent = window.navigator.userAgent.toLowerCase(),
+			safari = /safari/.test( userAgent ),
+			ios = /iphone|ipod|ipad/.test( userAgent );
+			android = (window.matchMedia('(display-mode: standalone)').matches); // isInWebAppChrome
+
+			//	if (android == true) {
+			//	}
+
+			if (window.navigator.standalone == true) {
+				//alert("You're using our PWA/Hybrid App!");
+				// Super small phones
+				if ($(window).width() <= 375) {
+					//alert("iPhone SEs etc");
+					$('.bottomtray').css('padding-bottom',0);
+					$('#fixed-btm-btn').css('padding-bottom',0);
+				}
+				// 393px is the cutoff in screen width
+				if ($(window).width() <= 393) {
+					$('.spacer').css('padding-top',72);
+					$('#lpcontainer').css('padding-top',25);
+					$('#featurelist').css('margin-top',18);
+					//alert("iPhone 15 Pros etc");
+				}
+				if ($(window).width() <= 586) {
+					//alert('iPhone 15 Pros + similar');
+					$('.wrap-top-menu').css('padding-top',73);
+					$('.home-feature-category').css('padding-top',48);
+				}
+
+				// iPad Portrait
+				if ($(window).width() == 768) {
+					$('.updatebutton').css('padding-bottom',60);
+					$('.invtxt').css('margin-bottom',0);
+					$('.scrollup').css('bottom',57);
+					//alert("You're using our Hybrid App!");
+				}
+				if ($(window).width() >= 1024) {
+					$('.spacer').css('padding-top',77);
+					$('.wrap-top-menu').css('padding-top',27);
+					$('.updatebutton').css('padding-bottom',60);
+					$('.invtxt').css('margin-bottom',0);
+					$('.scrollup').css('bottom',60);
+					//alert("You're using our Hybrid App and this is probably an iPad!");
+				}
+			} else {
+				if ( ios ) {
+					//alert("iOS");
+					if ( !standalone && !safari ) {
+						// THESE ARE MEANT FOR BASE APPWRAPPER PAGES
+						//alert("You're using the Native App");
+					};
+					if ( !standalone && safari ) {
+						// MOBILE SAFARI
+						//alert("You're using the regular Mobile Website");
+					};
+				} else {
+					// NOT iOS, so maybe this is Android. We need to test some more.
+					// Note: the window.navigator.standalone doesn't work with Androids
+				}
+
+				// You can display a message this way:
+				//	alert("This is a Hybrid App, please add the App Icon to your Home screen & open it from there to access all features.");
+				//	document.write('<p>Tap the + button and choose "Add to Home Screen"</p>');
+				//	document.write('<link rel="apple-touch-icon" href="/static/images/icon@2x.png"/>');
+				//	$('#addtheapp').show();
+			}
+
+			////////////////////////////////////////////////////////////
+			// DISPLAY AN "ADD OUR WEB APP" OVERLAY/SPLASH SCREEN
+			////////////////////////////////////////////////////////////
+
+			if (window.navigator.standalone == true) {
+				//alert('Stand-Alone');
+			} else {
+				//alert('NOT Stand-Alone');
+				if ($(window).width() <= 5870) {
+
+					var id = 'dialog';
+					var x = getCookie('addappicon');
+
+					if (x) {
+						//alert('Do nothing for PWA...');
+						//alert('Set the cookie');
+						//setCookie('addappicon','alreadyadded',1);
+					} else {
+						//setCookie('addappicon','alreadyadded',1);
+						//alert('NO Cookie, so show our Splash');
+						//transition effect
+						$('#mask').fadeIn(0);
+						$('#mask').fadeTo("fast",0.90);
+
+						//transition effect
+						$('#'+id).fadeIn(0);
+
+						//if close button is clicked
+						$('.window .close').click(function (e) {
+							//Cancel the link behavior
+							e.preventDefault();
+
+							$('#mask').hide();
+							$('.window').hide();
+						});
+
+						//if mask is clicked
+						$('#mask').click(function () {
+							$(this).hide();
+							$('.window').hide();
+						});
+
+						//enter buttons opens overlay
+						$('#ol').click(function () {
+							//transition effect
+							$('#mask').fadeIn(1000);
+							$('#mask').fadeTo("slow",0.90);
+
+							//transition effect
+							$('#'+id).fadeIn(2000);
+						});
+					}
+				} // END OF 587 WINDOW WIDTH CHECK ENDS
+
+				////////////////////////////////////////////////////////////
+				// ADDITIONAL FUNCTIONALITY FOR THE WEB APP SPLASH SCREEN
+
+				$('#showWAIS').click(function () {
+					//alert('WAIS!');
+					$('#mask').fadeIn(0);
+					$('#mask').fadeTo("fast",0.90);
+
+					//transition effect
+					$('#dialog').fadeIn(0);
+				});
+
+				//if close button is clicked
+				$('.window .close').click(function (e) {
+					//Cancel the link behavior
+					e.preventDefault();
+
+					$('#mask').hide();
+					$('.window').hide();
+				});
+
+				//if mask is clicked
+				$('#mask').click(function () {
+					$(this).hide();
+					$('.window').hide();
+				});
+
+				// FOR THE WEB APP SPLASH SCREEN
+				////////////////////////////////////////////////////////////
+			} // END OF WINDOW NAVIGATOR CHECK
+		}); // DOC READY ENDS, FUNCTIONS GO AFTER
+		/////////////////////////////////////////////////////////
+
+		function setCookie(name, value, days)
+		{
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days*1*60)); // days*24*60*60*1000
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+		}
+		function getCookie(name)
+		{
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for (var i=0;i < ca.length;i++) {
+				var c = ca[i];
+				while (c.charAt(0)==' ')
+					c = c.substring(1,c.length);
+				if (c.indexOf(nameEQ) == 0)
+					return c.substring(nameEQ.length,c.length);
+			}
+			return null;
+		}
+		function eraseCookie(name)
+		{
+			document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		}
+	</script>
+
+	<!--////////////////////////////////////////////////////////////-->
+	<!--////      THESE STYLES CONTROL THE SPLASH SCREEN        ////-->
+	<!--////////////////////////////////////////////////////////////-->
+
+	<style type="text/css">
+		body {
+			background:none !important;
+		}
+		html {
+			min-height: calc(100% + env(safe-area-inset-top)) !important;
+/*			padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);*/
+			background-attachment: fixed;
+			background-image: url('/images/bgmount.jpg');
+			/*background: url('/images/bgmount.jpg') no-repeat;*/
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	
+		/*******************************/
+		/**********  WEB APP  **********/
+		/*******************************/
+		.btn-red {
+			background: #dd1000;
+			color: #fff;
+			border-radius: 50px;
+			-moz-border-radius: 50px;
+			-webkit-border-radius: 50px;
+			margin-bottom: 10px;
+		}
+		.btn-red:hover {
+			background: #ff4e50;
+		}
+		#mask {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 90000;
+			background-size: cover;
+			background: url(js/webapp/images/diag.png);
+			background-color: rgba(0,0,0,.85) !important;
+			opacity: 1.0 !important;
+			width: 100%;
+			height: 100vh;
+		}
+		#boxes .window {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			display: none;
+			z-index: 99999;
+			padding: 0;
+		}
+		#boxes #dialog {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			height: auto;
+			width: auto;
+			overflow: hidden;
+		}
+
+		/*******************************/
+	</style>
+</head>
+
+	<body>
+	  	<!-- your content starts here... -->
+		  <div id="wrapper" style="overflow:hidden; /*padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);*/">
+		  
+		  	<header id="header" style="display:nonex; background:none !important; 
+		  	background-color:none !important; position:fixed;">
+			  <div class="wrap-top-menu" style="text-align:center; height:30px; padding:20px 0 10px;
+				background:rgba(0,0,0,.7) !important; color:#fff; position:fixed;
+					top:0; right:0; bottom:0; left:0; width:100%; /*margin-top:-50px !important;*/">
+					<div style="float:left; padding-left:15px">
+						<a href="/" style="color:#fff;">HOME</a>
+			  		</div>
+					
+					<img src="/js/webapp/images/logo.png" alt="Logo" style="max-height:28px; 
+					margin-bottom:10px;" />
+					
+			  		<div style="float:right; padding-right:15px">
+						<a href="javascript:top.frames.location.reload();" 
+							style="color:#fff;">Reload</a>
+			  		</div>
+			  	</div>
+			</header>
+			 
+			<div class="container" style="margin-top:30px">
+				<h1>
+				    CONTACT
+				</h1>
+
+				What is Lorem Ipsum?
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+				has been the industry's standard dummy text ever since the 1500s, when an unknown
+				printer took a galley of type and scrambled it to make a type specimen book.
+				<br /><br />
+				<a href="/index.html">&lsaquo; Home</a> &nbsp;/
+				&nbsp;<a href="/about.html">About</a> &nbsp;/
+				&nbsp;<a href="/example.html">With Nav &rsaquo;</a>
+				
+				<br /><br />
+				<center><a href="javascript:top.frames.location.reload();">refresh</a></center>
+			</div><!-- CONTAINER ENDS -->
+			
+			<!-- //////////////////////////////////////////////////////// -->
+			<!-- /////////////////   PWA SPLASH STARTS  ///////////////// -->
+			<!-- //////////////////////////////////////////////////////// -->
+			<div id="boxes">
+				<div id="dialog" class="window">
+					<div id="overlaystyle" style="font-family:Montserrat, Raleway,sans-serif; 
+					font-size:20px; font-weight:normal; padding:0px 10px 10px; color:#fff; 
+					text-align:center;">
+
+						<div style="display:table; height:100vh; width:100%;">
+							<div class="displaytable" style=" display: table-cell; vertical-align: middle;
+							height:400px;">
+								<img src="/js/webapp/images/logo.png"
+								style="height:auto; width:80%; max-width:250px;
+								margin-top:-50px; margin-bottom:10px" alt="Home" />
+
+								<div style="margin-bottom:10px;">
+									Add-to-Home Screen
+								</div>
+
+								<div style="font-size:17px; line-height:25px; color:#ccc; width:80%;
+								max-width:550px; margin:0 auto">
+									For a full-screen app experience + quick &amp; easy access
+									on any device, add our App Icon...
+								</div>
+								<br />
+
+								<img src="/js/webapp/images/app_icon.png" alt="Icon"
+								style="height:auto; width:70px; margin-top:15px; border-radius: 12px; 
+								-moz-border-radius: 12px; -webkit-border-radius: 12px;
+								border:1px solid rgba(255,255,255,.3);" alt="Home" />
+								<br /><br /><br />
+
+								<div style="margin-bottom:15px;">
+									<a href="javascript:;" class="btn-red close"
+									style="font-family:Montserrat, Open Sans, sans-serif; color:#fff;
+									font-size:17px; font-weight:600; text-shadow:0px 1px 1px rgba(0,0,0,.3);
+									padding:15px 20px;">Or, Enter Site Now</a>
+								</div>
+								<div class="clear"></div>
+								<div style="height:35px; line-height:36px; font-size:14px; color:#bbb;">
+									<img src="/js/webapp/images/share_icon_white.png" 
+									alt="Click Share Icon"
+									style="height:auto; width:30px; margin-bottom:6px; margin-right:2px"
+									align="absmiddle" /> iOS - Click the Share icon
+								</div>
+								<div style="height:30px; line-height:30px; font-size:14px; color:#bbb;">
+									<img src="/js/webapp/images/3_dots_white.png" alt="Click 3 dots"
+									style="height:auto; width:25px; margin-bottom:2px"
+									align="absmiddle" />Android - Click 3 dots icon
+								</div>
+								<div class="clear"></div>
+								<div style="position:absolute; bottom:15px; height:35px; width:100%;">
+									<img src="/js/webapp/images/close_x_white.png" class="close"
+									style="height:30px; width:30px;" alt="X" />
+								</div>
+								<div class="clear"></div>
+								<br /><br />
+							</div><!-- DISPLAY TABLE -->
+						</div>
+					</div><!-- OVERLAY -->
+				</div><!-- DIALOG -->
+				<div id="mask"></div>
+			</div><!-- BOXES -->
+			<!-- ######################################################## -->
+			<!-- ###################   PWA MASK ENDS  ################### -->
+			<!-- ######################################################## -->
+	  	</div><!-- WRAPPER ENDS -->
+	  	<script src="js/scripts.js"></script>
+	</body>
+</html>
