@@ -6,6 +6,11 @@ courtesy of BΛSΞ at baseframeworks.com, basepages.com and crowdkode.com
 Turn any website's mobile version into a fully-optimized, hybrid mobile app with its own custom App Icon and a full-screen experience just like App Store based mobile apps. Works on all devices - Androids, iPhones and even iPads.
 
 Live Demo: <a href="https://webapp.basepages.com" title="Web App Live Demo">https://webapp.basepages.com</a>
+<br />
+
+<img src="https://crowdkode.com/static/uploads/features/web_apps_screenshot.png" alt="Mobile Site vs WebApp" width="200" style="margin-bottom:20px;" />
+
+<br />
 
 If you like the Web App functionality and are interested in additional web app functionality like Offline Capabilities and more, check out our live "Offline" Demo, which we'll be releasing soon too:
 
