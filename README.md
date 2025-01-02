@@ -1,7 +1,7 @@
 # base-webapp
 <h1>BΛSΞ WEB APP - Source-Code Example + DIY Kit</h1>
 
-- courtesy of BΛSΞ at baseframeworks.com, basepages.com and crowdkode.com
+courtesy of BΛSΞ at baseframeworks.com, basepages.com and crowdkode.com
 <br /><br />
 Turn any website's mobile version into a fully-optimized, hybrid mobile app with its own custom App Icon and a full-screen experience just like App Store based mobile apps. Works on all devices - Androids, iPhones and even iPads.
 
@@ -11,7 +11,7 @@ If you like the Web App functionality and are interested in additional web app f
 
 Live Demo (Offline Web App Version): <a href="https://basepages.com/offline/index.html" title="Web App Live Demo">https://basepages.com/offline/index.html</a>
 
-////////////////////////////////////////////
+////////////////////////////////////////////<br />
 You can get free support at https://crowdkode.com/solutions/71
 
 For help with Installation or Customization Inquiries, please reach out at contact@basepages.com<br />
