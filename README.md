@@ -1,6 +1,8 @@
 # base-webapp
-<h1>BΛSΞ WEB APP - example and DIY Kit</h1>
+<h1>BΛSΞ WEB APP - Source-Code Example + DIY Kit</h1>
 <br />
+- courtesy of BΛSΞ at baseframeworks.com, basepages.com and crowdkode.com
+<br /><br />
 Turn any website's mobile version into a fully-optimized, hybrid mobile app with its own custom App Icon and a full-screen experience just like App Store based mobile apps. Works on all devices - Androids, iPhones and even iPads.
 
 Live Demo: <a href="https://webapp.basepages.com" title="Web App Live Demo">https://webapp.basepages.com</a>
@@ -8,6 +10,12 @@ Live Demo: <a href="https://webapp.basepages.com" title="Web App Live Demo">http
 If you like the Web App functionality and are interested in additional web app functionality like Offline Capabilities and more, check out our live "Offline" Demo, which we'll be releasing soon too:
 
 Live Demo (Offline Web App Version): <a href="https://basepages.com/offline/index.html" title="Web App Live Demo">https://basepages.com/offline/index.html</a>
+
+////////////////////////////////////////////
+You can get free support at https://crowdkode.com/solutions/71
+
+For help with Installation or Customization Inquiries, please reach out at contact@basepages.com
+////////////////////////////////////////////
 
 We've spent years perfecting hybrid mobile app functionality, which many refer to as PWAs (ie. progressive web apps) or HTML5 Apps - and we've combined all the best technology we've figured out or learned thanks to others brilliant work. There are tons of headaches involving PWAs because both Apple (Mobile Safari) and Google (Mobile Chrome) are constantly changing things with their mobile browsers - and web app functionality is clearly far from their priorities.
 
