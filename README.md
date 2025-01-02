@@ -8,7 +8,7 @@ Turn any website's mobile version into a fully-optimized, hybrid mobile app with
 Live Demo: <a href="https://webapp.basepages.com" title="Web App Live Demo">https://webapp.basepages.com</a>
 <br />
 
-<img src="https://crowdkode.com/static/uploads/features/web_apps_screenshot.png" alt="Mobile Site vs WebApp" width="300" style="max-width:300px; margin-bottom:20px;" />
+<img src="https://crowdkode.com/static/uploads/features/web_apps_screenshot.png" alt="Mobile Site vs WebApp" width="400" style="max-width:300px; margin-bottom:20px;" />
 
 <br />
 
