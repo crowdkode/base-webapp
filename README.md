@@ -3,6 +3,10 @@ Turn any website's mobile version into a fully-optimized, hybrid mobile app with
 
 Live Demo: <a href="https://webapp.basepages.com" title="Web App Live Demo">https://webapp.basepages.com</a>
 
+If you like the Web App functionality and are interested in additional web app functionality like Offline Capabilities and more, check out our live "Offline" Demo, which we'll be releasing soon too:
+
+Live Demo (Offline Web App Version): <a href="https://basepages.com/offline/index.html" title="Web App Live Demo">https://basepages.com/offline/index.html</a>
+
 We've spent years perfecting hybrid mobile app functionality, which many refer to as PWAs (ie. progressive web apps) or HTML5 Apps - and we've combined all the best technology we've figured out or learned thanks to others brilliant work. There are tons of headaches involving PWAs because both Apple (Mobile Safari) and Google (Mobile Chrome) are constantly changing things with their mobile browsers - and web app functionality is clearly far from their priorities.
 
 Basically, you can grab the files and drop the folder into any website (just make sure you correctly reference/link to the support files).
